@@ -1,7 +1,6 @@
 function sendMessage() {
 // Required vars
     var request = new XMLHttpRequest(); // Create a request processor to discord's api server
-    var message, webhook, username, avatar;
 
     request.open("POST", webhook);    
     request.setRequestHeader('Content-type', 'application/json');  

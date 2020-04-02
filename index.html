@@ -10,7 +10,6 @@
 
 <body class="background--nightly-frost">
   <h2>Dishook Web UI</h2>
-  <form>
     <div class="input-ctn">
       <p>Your room's webhook:</p>
       <input type="text" width="30%" height="20%" id="webhook" placeholder="https://discordapp.com/api/webhooks/nevergonnagiveyouupnevergonnaletyoudownnevergonnarunaroundanddesertyou"/>
@@ -19,15 +18,14 @@
       <p>and your message?</p>
       <input type="text" width="30%" height="20%" id="message" placeholder="type in the message..."/>
     </div>
-    <input type="submit" onclick="sendMessage()" id="send-btn" class="background--cold" value="Send"> or just hit enter
-  </form>
+    <button type="submit" onclick="sendMessage()" id="send-btn" class="background--cold">Send</button> or just hit enter
 </body>
 
 <script>  // Send all required datas to the core
-  var message =  document.getElementById('message').value;
-  var webhook =  document.getElementById('webhook').value;
-  var username =  document.getElementById('username').value;
+  var message =  document.getElementById('message').value,
+      webhook =  document.getElementById('webhook').value;
 </script>
 <script src="./js/core.js"></script> <!-- Now connect to the core!-->
+
 
 </html>
