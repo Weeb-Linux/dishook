@@ -3,56 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://raw.githubusercontent.com/Wello6143/wira/master/wira.min.css" rel="stylesheet">
+    <link href="./styles/wira.min.css" rel="stylesheet">
+    <link href="./styles/styles.css" rel="stylesheet">
     <title>Dishook beta</title>
   </head>
 
-  <style>
-    html, body{
-      width: 100%;
-      height: 100%;
-      padding: 0;
-      margin: 0;
-    }
-    *{
-      font-family: system-ui !important;
-    }
-    input[type="text"]{
-      padding: 5px;
-      width: 40%;
-      height: 2rem;
-      border-radius: 10px;
-      border: 0px;
-      outline: 0px;
-    }
-  </style>
+<body class="background--nightly-frost">
+  <h2>Dishook Web UI</h2>
+  <form>
+    <div class="input-ctn">
+      <p>Your room's webhook:</p>
+      <input type="text" width="30%" height="20%" id="webhook" placeholder="https://discordapp.com/api/webhooks/nevergonnagiveyouupnevergonnaletyoudownnevergonnarunaroundanddesertyou"/>
+    </div>
+    <div class="input-ctn">
+      <p>and your message?</p>
+      <input type="text" width="30%" height="20%" id="message" placeholder="type in the message..."/>
+    </div>
+    <input type="submit" onclick="sendMessage()" id="send-btn" class="background--cold" value="Send"> or just hit enter
+  </form>
+</body>
 
-  <body class="background--cold">
-    <input type="text" width="30%" height="20%" id="message" placeholder="Send message..."/>
-    <button onclick="sendMessage()">Send</button>
-  </body>
+<script>  // Send all required datas to the core
+  var message =  document.getElementById('message').value;
+  var webhook =  document.getElementById('webhook').value;
+  var username =  document.getElementById('username').value;
+</script>
+<script src="./js/core.js"></script> <!-- Now connect to the core!-->
 
-  <script>
-
-    function sendMessage() {
-        var request = new XMLHttpRequest();
-
-        request.open("POST", "https://discordapp.com/api/webhooks/694812478743511071/VQiIBjVlIl8Z8iuC8_wNWzRz6zHVul8N9Vbp_VpRw8DSjZuOzk0qUMWii4gd04wGr-gc");    
-        request.setRequestHeader('Content-type', 'application/json');  
-
-        var params = {
-          username: "Quá Nhi đại sư huynh",
-          avatar_url: "https://sohanews.sohacdn.com/2018/3/22/20170429-043538-nhung-my-nhan-cap-ke-voi-huynh-hieu-minh-tren-man-anh-hinh-5600x400-15217000712882024969752.jpg",
-          content: document.getElementById('message').value
-        }
-
-      request.send(JSON.stringify(params));
-    }
-    //setTimeout(
-    //    function loopSend(){
-    //      for (i = 0; i < 20; i++){
-    //        sendMessage();
-    //      }
-    //    }, 3000)
-  </script>
 </html>

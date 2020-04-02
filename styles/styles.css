@@ -1,0 +1,40 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+*{
+    font-family: system-ui !important;
+    color: white;
+}
+.input-ctn{
+    text-align: left;
+    background-color: rgba(255,255,255,0.7);
+    max-width: 70%;
+    padding: 5px;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+.input-ctn > p{
+    color: darkblue;
+    margin-left: 5px;
+}
+#webhook, #message{
+    color: darkblue;
+    padding: 5px;
+    width: calc(100% - 10px);
+    height: 2rem;
+    border-radius: 10px;
+    border: 0px;
+    outline: 0px;
+}
+#send-btn{
+    outline: 0px;
+    border: 0px;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
